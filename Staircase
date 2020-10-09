@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+// Complete the staircase function below.
+void staircase(int n) {
+    int idx = 0;
+    int cnt = 0;
+    int diff = 0;
+    for (idx=0; idx<n; idx++) {
+        cnt = idx+1;
+        diff = n-idx-1;
+        while (diff > 0) {
+            cout << ' ';
+            diff--;
+        }
+        while (cnt > 0) {
+            cout << '#';
+            cnt--;
+        }
+        cout << endl;
+    }
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    staircase(n);
+
+    return 0;
+}
